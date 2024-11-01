@@ -7,6 +7,7 @@ class Book(ABC):
         self.author = author
         self._is_available = True  # Encapsulated attribute to manage availability
 
+    # Abstract method to force subclasses to define book type
     @abstractmethod
-    def display(self):
+    def book_type(self):
         pass
