@@ -17,3 +17,21 @@ class Book(ABC):
     def check_availability(self):
         return self.__is_available
     #The __is_available attribute is private, to ensure that only borrow_book() and return_book() can modify the book’s availability.
+
+    # Borrow the book if available, else raise an exception
+    def borrow_book(self):
+        if self.__is_available:
+            self.__is_available = False
+            print(f"'{self.title}' has been borrowed.")
+        else:
+            raise Exception(f"'{self.title}' is currently not available.")
+    
+    # Return the book if it's borrowed, otherwise raise an exception
+    def return_book(self):
+        if not self.__is_available:
+            self.__is_available = True
+            print(f"'{self.title}' has been returned.")
+        else:
+            raise Exception(f"'{self.title}' was not borrowed.")
+        #Exception handling is implemented in borrow_book() and return_book() to prevent borrowing an unavailable book or returning a book that hasn’t been borrowed.
+    
