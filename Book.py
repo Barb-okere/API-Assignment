@@ -34,4 +34,13 @@ class Book(ABC):
         else:
             raise Exception(f"'{self.title}' was not borrowed.")
         #Exception handling is implemented in borrow_book() and return_book() to prevent borrowing an unavailable book or returning a book that hasn’t been borrowed.
+        # The Book class is now complete, and we can create subclasses to represent different types of books.
+         
+        # Book class subclasses 
+        # PhysicalBook class inheriting from Book
+        
+    class PhysicalBook(Book):
+         def __init__(self, title, author, condition="Good"):
+          super().__init__(title, author)
+          self.condition = condition
     
