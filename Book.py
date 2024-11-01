@@ -11,3 +11,8 @@ class Book(ABC):
     @abstractmethod
     def book_type(self):
         pass
+    # ABC module to enforce implementation of the book_type() method in subclasses.
+
+    # Method to check availablity of the book 
+    def check_availability(self):
+        return self.__is_available
