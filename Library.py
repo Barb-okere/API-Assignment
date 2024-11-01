@@ -11,3 +11,10 @@ class Library:
         self.books.append(book)
         print(f"'{book.title}' has been added to the library.")
     
+    # Remove a book from the library collection
+    def remove_book(self, book):
+        if book in self.books:
+            self.books.remove(book)
+            print(f"'{book.title}' has been removed from the library.")
+        else:
+            print(f"'{book.title}' is not in the library.")
