@@ -16,3 +16,4 @@ class Book(ABC):
     # Method to check availablity of the book 
     def check_availability(self):
         return self.__is_available
+    #The __is_available attribute is private, to ensure that only borrow_book() and return_book() can modify the book’s availability.
