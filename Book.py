@@ -43,4 +43,8 @@ class Book(ABC):
          def __init__(self, title, author, condition="Good"):
           super().__init__(title, author)
           self.condition = condition
+
+    # Return the book type
+    def book_type(self):
+        return "Physical Book"
     
