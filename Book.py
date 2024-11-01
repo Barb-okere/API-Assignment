@@ -47,4 +47,14 @@ class Book(ABC):
     # Return the book type
     def book_type(self):
         return "Physical Book"
+    #The PhysicalBook class inherits from the Book class and defines a condition attribute to represent the physical condition of the book.
+
+    # Physical books can only be borrowed if in good condition
+    def borrow_book(self):
+        if self.condition == "Good":
+            super().borrow_book()
+        else:
+            raise Exception(f"'{self.title}' is not in good condition for borrowing.")
+        #Adds the condition attribute to represent the physical state of the book.
+    #The borrow_book() method is overridden in the PhysicalBook class to check the condition of the book before borrowing it.
     
