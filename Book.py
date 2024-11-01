@@ -64,3 +64,37 @@ class Book(ABC):
             super().__init__(title, author)
             self.format = format
             self.file_size = file_size
+            #The EBook class inherits from the Book class and defines format and file_size attributes to represent the digital format and file size of the book.
+
+    # Return the book type
+    def book_type(self):
+        return "E-Book"
+    #The book_type() method is overridden in the EBook class to return the book type as “E-Book”.
+    #The borrow_book() method is not overridden in the EBook class, so it will use the implementation from the Book class to borrow the book if it is available.
+   
+    # Ebooks don't depend on physical availability, but simulate borrowing
+    def borrow_book(self):
+        print(f"'{self.title}' has been downloaded as an e-book.")
+        #This class simulates downloading the book without affecting availability (e-books can be “borrowed” anytime).
+
+    # AudioBook class inheriting from Book
+    class AudioBook(Book):
+        def __init__(self, title, author, duration="5 hours"):
+            super().__init__(title, author)
+            self.duration = duration
+            #The AudioBook class inherits from the Book class and defines duration attribute to represent the length of the audio book.
+
+    # Return the book type
+    def book_type(self):
+        return "Audio Book"
+    #The book_type() method is overridden in the AudioBook class to return the book type as “Audio Book”.
+    #The borrow_book() method is not overridden in the AudioBook class, so it will use the implementation from the Book class to borrow the book if it is available.
+
+    # Audio books can be borrowed for a specific duration of time
+    def borrow_book(self):
+        print(f"'{self.title}' has been borrowed for {self.duration}.")
+        #This class simulates borrowing the book for a specific duration of time.
+
+#The AudioBook class inherits from the Book class and defines a duration attribute to represent the length of the audio book.
+#The borrow_book() method is overridden in the AudioBook class to specify the duration of time the book has been borrowed for.
+#The Book class and its subclasses are now complete, and we can create instances of each subclass to represent different types of books.
