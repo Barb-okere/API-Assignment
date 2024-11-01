@@ -18,3 +18,23 @@ class Library:
             print(f"'{book.title}' has been removed from the library.")
         else:
             print(f"'{book.title}' is not in the library.")
+
+    # Display the available books in the library
+    def show_available_books(self):
+        if self.books:
+            print("Available books in the library:")
+            for book in self.books:
+                if book.check_availability():
+                 print(f"'{book.title}' {book.book_type()} by {book.author}")
+            else:
+                    print("No books available in the library.")
+                    print()
+    #The Library class has methods to add books to the collection, remove books, and display the available books.   
+    #The show_available_books() method displays the available books in the library with their titles, authors, and types.
+# Create an instance of the Library class
+library = Library()
+#The Library class is now complete, and we can create an instance of Library to represent a library.
+#The library instance can be used to manage the collection of books in the library.
+#The Library class manages the collection of books in the library, providing methods to add, remove, and display available books.
+#The Library class is now complete, and we can create an instance of Library to represent a library.
+
