@@ -58,3 +58,9 @@ class Book(ABC):
         #Adds the condition attribute to represent the physical state of the book.
     #The borrow_book() method is overridden in the PhysicalBook class to check the condition of the book before borrowing it.
     
+    # EBook class inheriting from Book
+    class EBook(Book):
+        def __init__(self, title, author, format="PDF", file_size = "2MB"):
+            super().__init__(title, author)
+            self.format = format
+            self.file_size = file_size
